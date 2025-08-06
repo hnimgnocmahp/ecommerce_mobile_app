@@ -5,4 +5,7 @@ class AppImages{
   static const String googleIcon = basePath + 'google_icon.png';
   static const String appleIcon = basePath + 'apple_icon.png';
   static const String letterLogo = basePath + 'letter.png';
+  static const String hoody = basePath + 'hoody.png';
+  static const String product = basePath + 'testing_product.png';
+
 }

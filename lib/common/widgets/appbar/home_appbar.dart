@@ -6,16 +6,20 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget{
   const HomeAppBar({super.key});
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 20),
-      child: AppBar(
-        leading: Container(
-          height: 50,
-          width: 50,
-          decoration: BoxDecoration(
-            color: AppColor.primary,
-            shape: BoxShape.circle,
-          )
+    return AppBar(
+        elevation: 0,
+        leadingWidth: 70,
+        leading: Padding(
+          padding: EdgeInsets.only(left: 20),
+          child: Container(
+              height: 50,
+              width: 50,
+              decoration: BoxDecoration(
+                color: AppColor.primary,
+                shape: BoxShape.circle,
+              )
+          
+          ),
         ),
         centerTitle: true,
         title: Container(
@@ -25,20 +29,20 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget{
             color: AppColor.primary,
             borderRadius: BorderRadius.circular(30),
           ),
-
         ),
         actions: [
-          Container(
-            height: 50,
-            width: 50,
-            decoration: BoxDecoration(
-              color: AppColor.primary,
-              shape: BoxShape.circle,
-            ),
-            child: Icon(Icons.shopping_bag_outlined, color: Colors.white,)),
+          Padding(
+            padding: EdgeInsets.only(right: 20),
+            child: Container(
+              height: 50,
+              width: 50,
+              decoration: BoxDecoration(
+                color: AppColor.primary,
+                shape: BoxShape.circle,
+              ),
+              child: Icon(Icons.shopping_bag_outlined, color: Colors.white,)),
+          ),
         ],
-
-      ),
     );
   }
 
