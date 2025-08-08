@@ -1,11 +1,8 @@
-import 'package:ecommerce_mobile_app/common/widgets/appbar/appbar.dart';
 import 'package:ecommerce_mobile_app/common/widgets/button/basic_app_button.dart';
 import 'package:ecommerce_mobile_app/common/widgets/dropdown/age_dropdown.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:ecommerce_mobile_app/presentation/wrapper/pages/main_screen.dart';
 import 'package:flutter/material.dart';
-
 import '../../../core/configs/theme/app_color.dart';
-import '../../home/pages/home.dart';
 
 class StartedPage extends StatelessWidget{
   const StartedPage({super.key});
@@ -72,7 +69,7 @@ class StartedPage extends StatelessWidget{
                 onPressed: (){
                   Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(builder: (BuildContext context) => HomePage())
+                      MaterialPageRoute(builder: (BuildContext context) => MainScreen()),
                   );
                 },
                 title: 'Finish',

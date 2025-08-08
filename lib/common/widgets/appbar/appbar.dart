@@ -2,12 +2,21 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class BasicAppBar extends StatelessWidget implements PreferredSizeWidget{
-  const BasicAppBar({super.key});
+  final Widget ? title;
+  final Widget ? action;
+  final bool hideBack;
+  const BasicAppBar({super.key, this.title, this.action, this.hideBack = false});
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: IconButton(
+      title: title ?? const SizedBox.shrink(),
+      centerTitle: true,
+      actions: [
+        action ?? const SizedBox.shrink(),
+      ],
+      automaticallyImplyLeading: false,
+      leading: hideBack ? null : IconButton(
           onPressed: () {
             Navigator.pop(context);
           },

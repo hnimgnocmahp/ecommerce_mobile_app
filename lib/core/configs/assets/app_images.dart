@@ -7,5 +7,6 @@ class AppImages{
   static const String letterLogo = basePath + 'letter.png';
   static const String hoody = basePath + 'hoody.png';
   static const String product = basePath + 'testing_product.png';
+  static const String notification = basePath + 'notification_bell.png';
 
 }

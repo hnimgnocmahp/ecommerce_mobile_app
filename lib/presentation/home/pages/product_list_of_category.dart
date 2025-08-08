@@ -1,7 +1,7 @@
 import 'package:ecommerce_mobile_app/common/widgets/appbar/appbar.dart';
 import 'package:flutter/material.dart';
 
-import '../../../common/widgets/product_container/product_container.dart';
+import '../widgets/product_container.dart';
 import '../../../core/configs/assets/app_images.dart';
 final products = [
   {

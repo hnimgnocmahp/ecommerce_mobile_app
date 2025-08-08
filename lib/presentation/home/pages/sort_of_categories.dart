@@ -1,6 +1,6 @@
 import 'package:ecommerce_mobile_app/common/widgets/appbar/appbar.dart';
 import 'package:ecommerce_mobile_app/core/configs/assets/app_images.dart';
-import 'package:ecommerce_mobile_app/presentation/home/pages/category_item.dart';
+import 'package:ecommerce_mobile_app/presentation/home/widgets/category_item.dart';
 import 'package:flutter/material.dart';
 
 class Categories extends StatelessWidget{

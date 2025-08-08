@@ -2,7 +2,7 @@ import 'package:ecommerce_mobile_app/core/configs/assets/app_images.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/configs/theme/app_color.dart';
-import '../../auth/page/signin.dart';
+import '../../auth/pages/signin.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});

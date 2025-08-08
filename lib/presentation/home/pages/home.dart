@@ -1,9 +1,11 @@
 import 'package:ecommerce_mobile_app/common/widgets/appbar/home_appbar.dart';
+import 'package:ecommerce_mobile_app/presentation/home/widgets/product_container.dart';
 import 'package:ecommerce_mobile_app/core/configs/assets/app_images.dart';
+import 'package:ecommerce_mobile_app/presentation/home/pages/sort_of_categories.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import '../../../common/widgets/search/CustomSearchDelegate.dart';
+import '../../../common/widgets/search/custom_search_delegate.dart';
 
 class HomePage extends StatelessWidget{
   final SearchController searchController = SearchController();
@@ -18,18 +20,16 @@ class HomePage extends StatelessWidget{
         slivers: [
           SliverToBoxAdapter(child: _searchBar(context)),
 
-          SliverToBoxAdapter(child: _buildSectionTitle('Categories')),
-           SliverToBoxAdapter(child: _buildCategories()),
+          SliverToBoxAdapter(child: _buildSectionTitle('Categories', context)),
+          SliverToBoxAdapter(child: _buildCategories()),
 
-          SliverToBoxAdapter(child: _buildSectionTitle('Top Selling')),
+          SliverToBoxAdapter(child: _buildSectionTitle('Top Selling', context)),
           SliverToBoxAdapter(child: _buildProductList()),
 
-          SliverToBoxAdapter(child: _buildSectionTitle('Recently Viewed')),
+          SliverToBoxAdapter(child: _buildSectionTitle('Recently Viewed', context)),
           SliverToBoxAdapter(child: _buildProductList()),
         ],
       ),
-
-      // bottomNavigationBar: ,
     );
   }
 
@@ -65,7 +65,7 @@ class HomePage extends StatelessWidget{
   }
 
 
-  Widget _buildSectionTitle(String title) {
+  Widget _buildSectionTitle(String title, BuildContext context) {
     return Padding(
       padding: EdgeInsets.only(top:20, bottom:10, left: 20, right: 20),
       child: Row(
@@ -73,8 +73,19 @@ class HomePage extends StatelessWidget{
         children: [
           Text(title,
               style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
-          Text('See All',
-              style: TextStyle(fontSize: 16),)
+          GestureDetector(
+            onTap: (){
+              if(title == 'Categories'){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (BuildContext context) => Categories())
+                );
+              }
+            },
+            child: Text('See All',
+                style: TextStyle(fontSize: 16),
+            ),
+          )
         ],
       ),
     );
@@ -160,54 +171,10 @@ class HomePage extends StatelessWidget{
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, item){
             final product = products[item];
-            return Container(
-              width: 160,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Stack(
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      AspectRatio(
-                        aspectRatio: 1,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(12),
-                          child: Image.asset(AppImages.product, fit: BoxFit.cover,)
-                        ),
-                      ),
-                      const SizedBox(height: 8),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 5),
-                        child: Text(
-                          product['name']!,
-                          style: const TextStyle(fontSize: 12),
-                          maxLines: 2,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                      ),
-                      const SizedBox(height: 4),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 5),
-                        child: Text(
-                          product['price']!,
-                          style: const TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 14),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Padding(
-                    padding: EdgeInsets.all(10),
-                    child: Align(
-                      alignment: Alignment.topRight,
-                      child: Icon(Icons.favorite_border_rounded)
-                    ),
-                  ),
-              ]
-              ),
+            return ProductContainer(
+                imageProduct: AppImages.product,
+                nameProduct: product['name'].toString(),
+                priceProduct: product['price'].toString(),
             );
           },
           separatorBuilder: (_, __) => const SizedBox(width: 16),

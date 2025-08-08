@@ -1,7 +1,7 @@
 import 'package:ecommerce_mobile_app/common/widgets/button/basic_app_button.dart';
 import 'package:ecommerce_mobile_app/core/configs/assets/app_images.dart';
 import 'package:ecommerce_mobile_app/core/configs/theme/app_color.dart';
-import 'package:ecommerce_mobile_app/presentation/auth/page/signin.dart';
+import 'package:ecommerce_mobile_app/presentation/auth/pages/signin.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

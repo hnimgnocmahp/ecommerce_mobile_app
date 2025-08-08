@@ -1,6 +1,5 @@
-import 'package:ecommerce_mobile_app/common/widgets/appbar/appbar.dart';
 import 'package:ecommerce_mobile_app/core/configs/theme/app_color.dart';
-import 'package:ecommerce_mobile_app/presentation/auth/page/signup.dart';
+import 'package:ecommerce_mobile_app/presentation/auth/pages/signup.dart';
 import 'package:flutter/material.dart';
 import '../../../common/widgets/button/basic_app_button.dart';
 import '../../../common/widgets/input/custom_text_field.dart';
