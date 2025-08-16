@@ -6,6 +6,7 @@ import 'package:iconly/iconly.dart';
 import '../../../common/bloc/bottom_nav/bottom_nav_cubit.dart';
 import '../../home/pages/home.dart';
 import '../../notification/bloc/notification_cubit.dart';
+import '../../order/bloc/orders_cubit.dart';
 
 
 class MainScreen extends StatelessWidget {
@@ -24,11 +25,15 @@ class MainScreen extends StatelessWidget {
       providers: [
         BlocProvider(create: (_) => BottomNavCubit()),
         BlocProvider(create: (_) => NotificationCubit()),
+        BlocProvider(create: (_) => OrdersCubit()),
       ],
       child: BlocBuilder<BottomNavCubit, int>(
         builder: (context, currentIndex) {
           return Scaffold(
-            body: pages[currentIndex],
+            body: IndexedStack(
+              index: currentIndex,
+              children: pages,
+            ),
             bottomNavigationBar: BottomNavigationBar(
               currentIndex: currentIndex,
               type: BottomNavigationBarType.fixed,

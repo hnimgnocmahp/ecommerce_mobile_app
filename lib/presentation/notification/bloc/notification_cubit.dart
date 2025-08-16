@@ -12,7 +12,7 @@ class NotificationCubit extends Cubit<NotificationState>{
     try {
 
       final List<String> notifications = [
-        'New order receivedddddddddddddddddddddddddddddddddddddddrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr',
+        'New order received',
         'Your order has been shipped',
         'Flash sale starts now!',
       ];

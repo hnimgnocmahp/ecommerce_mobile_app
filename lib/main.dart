@@ -1,9 +1,10 @@
 import 'package:ecommerce_mobile_app/presentation/splash/page/splash.dart';
+import 'package:ecommerce_mobile_app/service_locator.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+Future<void> main() async{
   WidgetsFlutterBinding.ensureInitialized();
-
+  await initializeDependencies();
   runApp(const MyApp());
 }
 

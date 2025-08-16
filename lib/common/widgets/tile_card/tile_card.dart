@@ -10,6 +10,7 @@ class TileCard extends StatelessWidget{
     return Card(
       margin: const EdgeInsets.symmetric(vertical: 6),
       child: ListTile(
+        visualDensity: VisualDensity(vertical: 4),
         leading: Stack(
           children: [
             icon,

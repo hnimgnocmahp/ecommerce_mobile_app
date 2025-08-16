@@ -4,7 +4,6 @@ import 'package:ecommerce_mobile_app/core/configs/assets/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iconly/iconly.dart';
-
 import '../../../core/configs/theme/app_color.dart';
 import '../bloc/notification_cubit.dart';
 import '../bloc/notification_state.dart';
@@ -69,7 +68,7 @@ class NotifyPage extends StatelessWidget{
               );
             }
             return ListView.builder(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: EdgeInsets.only(top: 20, left: 20, right: 20),
               itemCount: state.notifications.length,
               itemBuilder: (context, index) {
                 return TileCard(

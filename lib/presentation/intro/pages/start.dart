@@ -30,7 +30,7 @@ class StartedPage extends StatelessWidget{
                 'Who do you shop for ?',
                 style: TextStyle(
                   fontSize: 16,
-                  fontWeight: FontWeight.w400,
+                  fontWeight: FontWeight.w500,
                   fontFamily: 'Satoshi'
                 ),
               ),
@@ -57,7 +57,7 @@ class StartedPage extends StatelessWidget{
                 'How Old are you ?',
                 style: TextStyle(
                   fontSize: 16,
-                  fontWeight: FontWeight.w400,
+                  fontWeight: FontWeight.w500,
                   fontFamily: 'Satoshi'
                 ),
               ),

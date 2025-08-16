@@ -8,5 +8,6 @@ class AppImages{
   static const String hoody = basePath + 'hoody.png';
   static const String product = basePath + 'testing_product.png';
   static const String notification = basePath + 'notification_bell.png';
+  static const String order = basePath + 'orders_stroller.png';
 
 }

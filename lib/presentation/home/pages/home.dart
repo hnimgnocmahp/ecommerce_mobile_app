@@ -47,15 +47,27 @@ class HomePage extends StatelessWidget{
           print("Người dùng chọn: $result");
         },
         child: IgnorePointer(
-          child: TextField(
-            decoration: InputDecoration(
-              fillColor: Color(0xffF4F4F4),
-              filled: true,
-              hintText: 'Search.',
-              prefixIcon: Icon(Icons.search),
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(30),
-                borderSide: BorderSide.none
+          child: Container(
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.3), // Màu bóng
+                  spreadRadius: 1, // Độ lan của bóng
+                  blurRadius: 16, // Độ mờ
+                  offset: const Offset(0, 8), // Vị trí bóng
+                ),
+              ],
+            ),
+            child: TextField(
+              decoration: InputDecoration(
+                fillColor: Color(0xffF4F4F4),
+                filled: true,
+                hintText: 'Search.',
+                prefixIcon: Icon(Icons.search),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30),
+                  borderSide: BorderSide.none,
+                ),
               ),
             ),
           ),
@@ -63,7 +75,6 @@ class HomePage extends StatelessWidget{
       ),
     );
   }
-
 
   Widget _buildSectionTitle(String title, BuildContext context) {
     return Padding(

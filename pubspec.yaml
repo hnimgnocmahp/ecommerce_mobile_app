@@ -38,6 +38,9 @@ dependencies:
   flutter_native_splash: ^2.4.6
   dropdown_button2:
   iconly:
+  dartz:
+  get_it:
+  dio:
 
 dev_dependencies:
   flutter_test:
